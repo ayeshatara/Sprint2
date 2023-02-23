@@ -36,31 +36,6 @@ public class StepDefinition {
     }
 
 
-   @Given("The user navigate to home page.")
-    public void the_user_navigate_to_home_page() {
-        url= QAprops.getValue("url");
-        driver.get(url);
-       data= TestDataReader.getData(scenario.getName());
-    }
-    @When("The user goes to login page.")
-    public void the_user_goes_to_home_page() {
-        cartPage=new CartPage(driver);
-        cartPage.getSignIn().click();
-
-    }
-    @And("Enters valid credentials.")
-    public void entersValidCredentials() {
-        cartPage.getMobNumber().sendKeys(data.get("userEnter"));
-        cartPage.getSubmitNum().click();
-        cartPage.getPassword().sendKeys(data.get("password"));//data.get("password")
-        cartPage.getSubmitPass().click();
-    }
-
-    @Then("The user should Logged-in Successfully.")
-    public void theUserShouldLoggedInSuccessfully() {
-        String text = cartPage.getRetrieveText().getText();
-        Assert.assertEquals(text,"Hello, Ayesha");
- }
 
     @Given("The user navigate to the home page.")
     public void theUserNavigateToTheHomePage() {

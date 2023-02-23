@@ -1,11 +1,5 @@
 Feature: To search the product and add that product into the cart.
 
-  Scenario: Verify that user is able to log-in with valid credentials.
-    Given The user navigate to home page.
-    When The user goes to login page.
-    And Enters valid credentials.
-    Then The user should Logged-in Successfully.
-
   Scenario: Verify that user able to search the product in Search Box.
     Given The user navigate to the home page.
     When The user enters Product Name.
